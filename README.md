@@ -1,1 +1,1 @@
-# Just a full stack demostration made with Mongo, Express, Angular, Nodejs & JWT
+# Just a Register/Auth demostration made with Mongo, Express, Angular, Nodejs & JWT
