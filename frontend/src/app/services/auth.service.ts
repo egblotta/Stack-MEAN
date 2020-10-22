@@ -13,4 +13,8 @@ export class AuthService {
   signUp(user){
     return this.http.post<any>(this.URL +"/signup",user);         //envio a traves de post, por la ruta URL, el objeto user
   }
+
+  signIn(user){
+    return this.http.post<any>(this.URL +"/signin",user);         //envio a traves de post, por la ruta URL, el objeto user
+  }
 }

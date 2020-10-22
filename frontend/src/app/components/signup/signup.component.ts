@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from "../../services/auth.service";
+import { Router } from "@angular/router";     //modelo enrutador
 
 @Component({
   selector: 'app-signup',
@@ -14,7 +15,10 @@ export class SignupComponent implements OnInit {
     password: ''
   }
 
-  constructor(private authService: AuthService) { }
+  constructor(
+    private authService: AuthService,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
   }
@@ -24,6 +28,8 @@ export class SignupComponent implements OnInit {
     .subscribe(                           //respuesta del servidor
       res => {
         console.log(res)
+        localStorage.setItem('token', res.token);
+        this.router.navigate(['/private']);
       },
       err => console.log(err)
     )
